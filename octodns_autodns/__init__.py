@@ -14,7 +14,7 @@ from octodns.record import Record
 from octodns.zone import Zone
 
 # TODO: remove __VERSION__ with the next major version release
-__version__ = __VERSION__ = '0.0.1'
+__version__ = __VERSION__ = '0.0.2'
 
 
 class AutoDNSClientException(ProviderException):
