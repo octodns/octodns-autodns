@@ -9,6 +9,6 @@ dist/
 env/
 htmlcov/
 nosetests.xml
-octodns_*.egg-info/
+octodns_autodns*.egg-info/
 # config file for testing
 config.yml
