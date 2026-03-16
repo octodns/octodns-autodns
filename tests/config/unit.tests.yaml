@@ -18,7 +18,10 @@
   - ttl: 600
     type: TXT
     value: octodns autodns test
-
+_dmarc:
+  ttl: 3600
+  type: TXT
+  value: "v=DMARC1\\; p=none\\; rua=mailto:webmaster@unit.tests\\; ruf=mailto:webmaster@unit.tests\\;"
 _srv2._tcp:
   type: SRV
   value:

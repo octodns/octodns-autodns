@@ -17,6 +17,10 @@ from octodns.zone import Zone
 __version__ = __VERSION__ = '0.0.2'
 
 
+def escape_semicolon(s):
+    return s.replace(';', '\\;')
+
+
 class AutoDNSClientException(ProviderException):
     """
     AutoDNSClientException for AutoDNSClientNotFound and AutoDNSClientUnauthorized
@@ -146,7 +150,10 @@ class AutoDNSProvider(BaseProvider):
     def _data_for_MULTI(self, _type, records, default_ttl):
         values = []
         for record in records:
-            values.append(record.get('value'))
+            value = record.get('value')
+            if _type == 'TXT':
+                value = escape_semicolon(value)
+            values.append(value)
         try:
             _ttl = records[0]["ttl"]
         except KeyError:

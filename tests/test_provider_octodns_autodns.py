@@ -91,8 +91,9 @@ class TestAutoDNSProvider(TestCase):
 
             zone = Zone('unit.tests.', [])
             provider.populate(zone)
-            self.assertEqual(15, len(zone.records))
+            self.assertEqual(16, len(zone.records))
             changes = self.expected.changes(zone, provider)
+            print(changes)
             self.assertEqual(0, len(changes))
 
     def test_apply(self):
@@ -403,7 +404,7 @@ class TestAutoDNSProvider(TestCase):
             ],
             any_order=True,
         )
-        self.assertEqual(20, provider.client._do.call_count)
+        self.assertEqual(21, provider.client._do.call_count)
 
         provider.client._do.reset_mock()
 
