@@ -175,6 +175,12 @@
 					"name": "test2",
 					"type": "CAA",
 					"value": "0 iodef \"mailto:webmaster@unit.tests\""
+				},
+				{
+					"name": "_dmarc",
+					"ttl": 3600,
+					"type": "TXT",
+					"value": "v=DMARC1; p=none; rua=mailto:webmaster@unit.tests; ruf=mailto:webmaster@unit.tests;"
 				}
 			],
 			"roid": 7196262
